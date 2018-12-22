@@ -2,9 +2,9 @@ import React, { Component } from "react";
 import Titles from "./component/Titles";
 import Forms from "./component/Forms";
 import Weather from "./component/Weather";
-import background from "./img/bg.jpg"
+import background from "./img/bg.jpg";
 import "./component/api_key";
-import {Container, Grid, Segment, Image} from 'semantic-ui-react';
+import { Container, Grid, Segment, Image, Responsive } from "semantic-ui-react";
 
 const API_KEY = "c3464f34fd5f12e3e4b73c001d9706a9";
 
@@ -50,35 +50,39 @@ export default class App extends Component {
     return (
       <React.Fragment>
         <Container>
-        <Titles />
-        <Grid columns = {2}>
-        <Grid.Row stretched>
-            <Grid.Column width={4}>
-              <Segment color='green'>
-                <Image src={background} size='medium' fixed/>
-              </Segment>
-            </Grid.Column>
+          <Titles />
+          <Grid columns={2}>
+            <Grid.Row stretched>
+              <Grid.Column width={4}>
+                <Responsive>
+                  <Segment color="green">
+                    <Image src={background} size="medium" fluid />
+                  </Segment>
+                </Responsive>
+              </Grid.Column>
 
-            <Grid.Column width={12}>
-              <Segment color='green'>
-              {/* <div className="form-container"> */}
-                <Forms getWeather={this.getWeather} />
-              {/* </div> */}
-              </Segment>
-              <Segment color='green'>
-              <Weather
-                  temperature={this.state.temperature}
-                  pressure={this.state.pressure}
-                  humidity={this.state.humidity}
-                  city={this.state.city}
-                  country={this.state.country}
-                  description={this.state.description}
-                  error={this.state.error}
-                />
-              </Segment>
-          </Grid.Column>
-          </Grid.Row>
-        </Grid>
+              <Grid.Column width={12}>
+                <Segment color="green">
+                  {/* <div className="form-container"> */}
+                  <Forms getWeather={this.getWeather} />
+                  {/* </div> */}
+                </Segment>
+                <Responsive>
+                  <Segment color="green">
+                    <Weather
+                      temperature={this.state.temperature}
+                      pressure={this.state.pressure}
+                      humidity={this.state.humidity}
+                      city={this.state.city}
+                      country={this.state.country}
+                      description={this.state.description}
+                      error={this.state.error}
+                    />
+                  </Segment>
+                </Responsive>
+              </Grid.Column>
+            </Grid.Row>
+          </Grid>
         </Container>
       </React.Fragment>
     );

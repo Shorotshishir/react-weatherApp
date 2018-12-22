@@ -1,6 +1,12 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
 ## The Weather APP
+
 In this project I use the OPENWEATHERMAP API to create a weather app that takes 2 argument from user and shows the weather accordingly.
+
+##The Movie Search Database
+
+![alt text](https://github.com/Shorotshishir/react-weatherApp/blob/master/src/screenshots/scr1.png)
 
 ## Available Scripts
 
